@@ -19,9 +19,9 @@ if a != 0 and vf!=0 :
     print('가속도와 최종속력 둘중 하나는 0이어야 합니다.')
     
     
-if a == 0 :
-    a = (vf - vi) / t
-    d = (vf**2 - vi**2) / (2*a)
+if a == 0 : 
+    a = (vf - vi) / t 
+    d = (vf**2 - vi**2) / (2*a) 
     print("가속도는", a, "m/s^2 입니다.")
     print("이동거리는", abs(d), "m 입니다.")
     #그래프부
@@ -58,3 +58,17 @@ if vf == 0 :
     plt.ylabel('distance(m)')
     plt.title('시간-거리 그래프')
     plt.show()
+    
+#일-에너지 정리 구현
+
+if vf == 0 and a == 0 and t == 0 :
+    F = float(input('가해준 힘을 입력하세요'))
+    s = float(input('이동거리를 입력하세요'))
+    m = float('질량을 입력하세요')
+    vf =  (2*F*s/m + (vi)**2)**0.5
+    #상대론적인 효과 고려
+    if vi >> 3000000 
+        c = 30000000
+        r1 = (1-vi**2/c**2)**(-0.5)
+        vf = ((F*s + (r1-1)*m*(c)**2)/(F*s + r1*m*(c)**2))**0.5*c
+     print("최종속력은", vf, "m/s 입니다.")
